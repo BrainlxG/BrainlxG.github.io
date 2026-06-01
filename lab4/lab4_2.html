@@ -4,11 +4,9 @@
   <meta charset="UTF-8">
   <title>Оформление вертикального меню</title>
   <style>
-
     html {
       background: #f0f0f0;
     }
-
 
     .menu {
       width: 200px;
@@ -17,23 +15,20 @@
       margin: 20px;
     }
 
-
     .menu ul {
       list-style: none;
       margin: 0;
       padding: 0;
     }
 
-
     .menu > ul > li {
-      background: url("plus.gif") no-repeat 0 10px;
+      background: url("pic/plus.gif") no-repeat 0 10px;
       margin: 0;
-      padding: 10px 0 10px 25px; 
+      padding: 10px 0 10px 25px;
       border-bottom: 1px solid #ccc;
       cursor: pointer;
       position: relative;
     }
-
 
     .menu li a {
       text-decoration: underline;
@@ -41,19 +36,16 @@
       display: block;
     }
 
-
     .menu li a:hover {
       color: darkblue;
     }
-
 
     .menu li ul {
       display: none;
     }
 
-
     .menu li li {
-      background: url("point.gif") no-repeat 0 7px;
+      background: url("pic/point.gif") no-repeat 0 7px;
       padding: 5px 0 5px 20px;
       border-bottom: 1px solid #ccc;
     }
@@ -99,22 +91,20 @@
       </li>
     </ul>
   </nav>
-  
-  <script>
 
+  <script>
     document.querySelectorAll('.menu > ul > li > a').forEach(function(link) {
       link.addEventListener('click', function(e) {
-        e.preventDefault(); 
+        e.preventDefault();
         var parentLi = this.parentElement;
         var submenu = parentLi.querySelector('ul');
         if (submenu) {
-
           if (submenu.style.display === 'block') {
             submenu.style.display = 'none';
-            parentLi.style.background = 'url("plus.gif") no-repeat 0 10px';
+            parentLi.style.background = 'url("pic/plus.gif") no-repeat 0 10px';
           } else {
             submenu.style.display = 'block';
-            parentLi.style.background = 'url("minus.gif") no-repeat 0 10px';
+            parentLi.style.background = 'url("pic/minus.gif") no-repeat 0 10px';
           }
         }
       });
